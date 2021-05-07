@@ -1,28 +1,21 @@
 <?php 
 		session_start();
-?>
-<?php 	
 		
-		
-		include("en_tete.php");
+		include("en_tete.html");
 	
 		include ("page_film.php");
 	
-		include("Phrase_film.php");
+		include("Phrase_film.html");
 	
-		include("formulaire_liste_deroulante.php");
+		include("formulaire_liste_deroulante.html");
 
 		while ($donnees = $rep->fetch(PDO::FETCH_ASSOC)){  
 			echo "<option>" .$donnees['Titre_film'];
 		}
+		include("fermeture_liste.html");
+		
+		include("Bouton_fin_formulaire.html");
 			
-		include("Bouton_fin_formulaire.php");
+		include("pied_page.html");
 		
-		include("traitement_identification.php");
-			
-		echo $_SESSION['pseudo'];
-		
-		include("pied_page.php");
-		
-		echo $_SESSION['pseudo'];
 ?>
